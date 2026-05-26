@@ -18,9 +18,10 @@ if [ -e ${way}/server.properties ]; then
             for spacename_sel in ${spacename[@]}; do
                 dimension=($(ls ${way}/world/dimensions/${spacename_sel}/))
                 for dimension_sel in ${dimension[@]}; do
+                    mkdir -p ${way}/swap/world/dimensions/${spacename_sel}/${dimension_sel}
                     cp -rf ${way}/world/dimensions/${spacename_sel}/${dimension_sel}/data ${way}/swap/world/dimensions/${spacename_sel}/${dimension_sel}/
                     for folder_sel in ${folder_all[@]}; do
-                        mkdir -p ${way}/swap/world/dimensions/${spacename_sel}/${dimension_sel}/${folder_sel}/
+                        mkdir -p ${way}/swap/world/dimensions/${spacename_sel}/${dimension_sel}/${folder_sel}
                         for x_meta_sel in ${x_meta[@]}; do
                             for y_meta_sel in ${y_meta[@]}; do
                                 if [ -e ${way}/world/dimensions/${spacename_sel}/${dimension_sel}/${folder_sel}/r.${x_meta_sel}.${y_meta_sel}.mca ]
