@@ -51,4 +51,3 @@ if [ -e ${way}/server.properties ]; then
 else
     echo -e "\033[31mserver.properties not found\033[0m]"
 fi
-#
